@@ -1,0 +1,52 @@
+.bg_custom {
+    background-color: antiquewhite;
+}
+
+#main-container {
+    height: 100vh;
+}
+
+.pallino {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.pallino_active {
+    background-color: blue;
+}
+
+.sbarra {
+    text-decoration: line-through;
+}
+
+.non-sbarra {
+    text-decoration: none;
+}
+
+/**/
+.sfondo {
+    height: 100vh;
+}
+
+.img_profile {
+    width: 80px;
+    height: 80px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.sent {
+    background-color: green;
+}
+
+.received {
+    background-color: white;
+}
