@@ -1,31 +1,6 @@
-.bg_custom {
-    background-color: antiquewhite;
+.fs_0_7em {
+    font-size: 0.7em;
 }
-
-#main-container {
-    height: 100vh;
-}
-
-.pallino {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: black;
-}
-
-.pallino_active {
-    background-color: blue;
-}
-
-.sbarra {
-    text-decoration: line-through;
-}
-
-.non-sbarra {
-    text-decoration: none;
-}
-
-/**/
 .sfondo {
     height: 100vh;
     background-image: 
@@ -49,10 +24,6 @@
 
 p {
     margin-bottom: 0;
-}
-
-ul {
-    margin: 0;
 }
 
 .sent {
