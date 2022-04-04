@@ -1,7 +1,4 @@
-/**Oggi iniziamo una nuova esercitazione che ci terrà occupati oggi, Martedì e Mercoledì.
-Come detto questa mattina ogni giorno vi verranno assegnate una o più milestone che io correggerò il giorno seguente all'assegnazione.
-La correzione avverrà in classe alle 9.30 del mattino, quindi ogni mattina ci troveremo in classe alle 9.30 (la presenza non è facoltativa).
-Oggi iniziamo con la milestone 1:
+/*
 Milestone 1
 Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto */
@@ -10,8 +7,8 @@ var app = new Vue(
         el: "#root",
         data: {
             profilo: {
-                nome: "Ga",
-                img: "avatar_io"
+                nome: "Sofia",
+                img: "_io"
             },
             usersChat: [
                 {

@@ -21,17 +21,19 @@
         <div class="sfondo py-3">
             <div class="container h-100 bg-white">
                 <div class="row h-100">
-                    <div class="col-4">
+
+                    <!-- COLONNA SX -->
+                    <div class="col-4 ps-0 pe-0">
                         <!-- 1a section -->
                         <div class="d-flex justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center">
-                                <img src="./asset/img/avatar_io.jpg" alt="" class="rounded-circle img_profile me-3">
-                                <span>nom con</span>
+                                <img :src=" './asset/img/avatar' + profilo.img + '.jpg' " alt="img" class="rounded-circle img_profile me-3">
+                                <span class="fw-bold">{{profilo.nome}}</span>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="">
+                                <i class="fa-solid fa-circle-notch mx-1"></i>
+                                <i class="fa-solid fa-message mx-1"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mx-1"></i>
                             </div>
                         </div>
 
@@ -41,57 +43,57 @@
                                 <i class="fa-solid fa-bell-slash text-info"></i>
                             </div>
                             <div>
-                                <p>blllllaaaa</p>
-                                <p>blalbalblablablabala</p>
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <p>Abilita notifiche desktop</p>
                             </div>
                         </div>
 
                         <!-- 3a sec -->
-                        <div class="d-flex justify-content-center align-items-center p-3">
+                        <div class="d-flex align-items-center py-2">
                             <div class="p-2">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            <div>
-                                <input type="text" placeholder="">
+                            <div class="w-100">
+                                <input class="w-100" type="text" placeholder="">
                             </div>
                         </div>
 
-                        <!-- 4a sec -->
-                        <div class="">
-                            <ul>
-                                <li class="d-flex align-items-center justify-content-center p-3">
+                        <!-- 4a sec immagini da ciclare -->
+                        <div v-for="(element) in usersChat" :key="element" class="">
+                            <ul class="p-0">
+                                <li class="d-flex align-items-center justify-content-between p-3">
                                     <div class="d-flex align-items-center">
-                                        <img src="./asset/img/avatar_1.jpg" alt=""
+                                        <img :src=" './asset/img/avatar' + element.avatar + '.jpg' " alt="img_users"
                                             class="rounded-circle img_profile me-3">
-                                        <div>
-                                            <span>nom con</span>
-                                            <span>msgs</span>
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-bold">{{element.name}}</span>
+                                            <span>{{element.messages[2].message}}</span>
                                         </div>
                                     </div>
                                     <div>
-                                        <span>17</span>
+                                        <span class="">{{element.messages[2].date}}</span>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-
+                    <!-- COLONNA DX -->
                     <div class="col-8 d-flex flex-column justify-content-between">
                         <div class="d-flex justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center">
-                                <img src="./asset/img/avatar_io.jpg" alt="" class="rounded-circle img_profile me-3">
-                                <span>nom con</span>
+                                <img :src=" './asset/img/avatar' + usersChat[0].avatar + '.jpg' " alt="img" class="rounded-circle img_profile me-3">
+                                <span class="fw-bold">{{usersChat[0].name}}</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa-solid fa-circle-notch mx-1"></i>
+                                <i class="fa-solid fa-message mx-1"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mx-1"></i>
                             </div>
                         </div>
 
                         <!-- chat -->
-                        <div class="sfondo_chat h-100">
+                        <div class="sfondo_chat h-100 p-5">
                             <ul class="list-group list-group-flash d-flex flex-column">
                                 <li class="list-group-item rounded-3 sent align-self-end">
                                     messaggio1
@@ -103,12 +105,12 @@
                         </div>
 
                         <!-- sotto chat -->
-                        <div class="d-flex justify-content-center align-items-center p-3">
+                        <div class="d-flex align-items-center py-2">
                             <div class="p-2">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-regular fa-face-smile fs-4 px-2"></i>
                             </div>
-                            <div>
-                                <input type="text" placeholder="">
+                            <div class="w-100">
+                                <input class="w-100 p-1" type="text" placeholder="Scrivi un messaggio">
                             </div>
                         </div>
                     </div>

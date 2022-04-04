@@ -38,6 +38,10 @@
     padding: 30px;
 }
 
+.sfondo_chat {
+    background-color: gray;
+}
+
 .img_profile {
     width: 80px;
     height: 80px;
