@@ -19,11 +19,11 @@
 
     <div id="root">
         <div class="sfondo py-3">
-            <div class="container h-100 bg-white">
+            <div class="container bg-white h-100">
                 <div class="row h-100">
 
                     <!-- COLONNA SX -->
-                    <div class="col-4 ps-0 pe-0">
+                    <div class="col-4 ps-0 pe-0 h-100 overflow_y">
                         <!-- 1a section -->
                         <div class="d-flex justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center">
@@ -59,19 +59,19 @@
                         </div>
 
                         <!-- 4a sec immagini da ciclare -->
-                        <div v-for="(element) in usersChat" :key="element" class="">
+                        <div class="overflow_y">
                             <ul class="p-0">
-                                <li class="d-flex align-items-center justify-content-between p-3">
+                                <li  v-for="(element) in usersChat" :key="element" class="d-flex align-items-center justify-content-between p-3">
                                     <div class="d-flex align-items-center">
                                         <img :src=" './asset/img/avatar' + element.avatar + '.jpg' " alt="img_users"
                                             class="rounded-circle img_profile me-3">
                                         <div class="d-flex flex-column">
                                             <span class="fw-bold">{{element.name}}</span>
-                                            <span>{{element.messages[2].message}}</span>
+                                            <span>{{element.messages[0].message}}</span>
                                         </div>
                                     </div>
                                     <div class="align-self-baseline">
-                                        <span class="fs_0_7em">{{element.messages[2].date}}</span>
+                                        <span class="fs_0_7em">{{element.messages[0].date}}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -105,7 +105,7 @@
                         </div>
 
                         <!-- sotto chat -->
-                        <div class="d-flex align-items-center pb-4 pt-2">
+                        <div class="d-flex align-items-center py-3">
                             <div class="p-2">
                                 <i class="fa-regular fa-face-smile fs-4 px-2"></i>
                             </div>

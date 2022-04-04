@@ -1,6 +1,11 @@
 .fs_0_7em {
     font-size: 0.7em;
 }
+
+.overflow_y {
+    overflow-y: auto;
+}
+
 .sfondo {
     height: 100vh;
     background-image: 
@@ -11,6 +16,10 @@
     #d2dbdc 100%
     );
     padding: 30px;
+}
+
+.h_100vh {
+    height: 100vh;
 }
 
 .sfondo_chat {
@@ -32,4 +41,8 @@ p {
 
 .received {
     background-color: white;
+}
+
+.prova {
+    height: 300px;
 }
