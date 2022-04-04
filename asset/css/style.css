@@ -11,8 +11,16 @@
     overflow-y: auto;
 }
 
+.overflow_h {
+    overflow: hidden;
+}
+
 .h_100vh {
     height: 100vh;
+}
+
+.max_w_100 {
+    max-width: 100%;
 }
 
 /*SPECIFIC CLASSES*/
