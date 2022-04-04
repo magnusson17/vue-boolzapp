@@ -95,9 +95,12 @@ var app = new Vue(
                     ],
                 },
             ],
+            myMessage: "",
         },
         methods: {
-            
+            sendMyMessage: function() {
+                
+            }
         }
     }
 );

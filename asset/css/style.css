@@ -1,11 +1,21 @@
+/*MULTI-USE CLASSES*/
 .fs_0_7em {
     font-size: 0.7em;
+}
+
+.hover_pointer {
+    cursor: pointer;
 }
 
 .overflow_y {
     overflow-y: auto;
 }
 
+.h_100vh {
+    height: 100vh;
+}
+
+/*SPECIFIC CLASSES*/
 .sfondo {
     height: 100vh;
     background-image: 
@@ -16,10 +26,6 @@
     #d2dbdc 100%
     );
     padding: 30px;
-}
-
-.h_100vh {
-    height: 100vh;
 }
 
 .sfondo_chat {

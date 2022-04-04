@@ -23,7 +23,7 @@
                 <div class="row h-100">
 
                     <!-- COLONNA SX -->
-                    <div class="col-4 ps-0 pe-0 h-100 overflow_y">
+                    <div class="col-4 ps-0 pe-0 h-100">
                         <!-- 1a section -->
                         <div class="d-flex justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center">
@@ -59,7 +59,7 @@
                         </div>
 
                         <!-- 4a sec immagini da ciclare -->
-                        <div class="overflow_y">
+                        <div class="overflow_y prova">
                             <ul class="p-0">
                                 <li  v-for="(element) in usersChat" :key="element" class="d-flex align-items-center justify-content-between p-3">
                                     <div class="d-flex align-items-center">
@@ -95,10 +95,10 @@
                         <!-- chat -->
                         <div class="sfondo_chat h-100 p-5">
                             <ul class="list-group list-group-flash d-flex flex-column">
-                                <li class="list-group-item rounded-3 sent align-self-end">
-                                    messaggio1
+                                <li class="list-group-item rounded-3 mb-2 sent align-self-end">
+                                    {{myMessage}}
                                 </li>
-                                <li class="list-group-item rounded-3 recived align-self-start">
+                                <li class="list-group-item rounded-3 mb-2 recived align-self-start">
                                     messaggio2
                                 </li>
                             </ul>
@@ -107,10 +107,16 @@
                         <!-- sotto chat -->
                         <div class="d-flex align-items-center py-3">
                             <div class="p-2">
-                                <i class="fa-regular fa-face-smile fs-4 px-2"></i>
+                                <i class="fa-regular fa-face-smile fs-4 px-2 hover_pointer"></i>
                             </div>
                             <div class="w-100">
-                                <input class="w-100 p-1" type="text" placeholder="Scrivi un messaggio">
+                                <input v-model="myMessage" class="w-100 p-1" type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="p-2">
+                                <i class="fa-solid fa-paper-plane fs-4 hover_pointer"></i>
+                            </div>
+                            <div class="p-2">
+                                <i class="fa-solid fa-microphone fs-4 hover_pointer"></i>
                             </div>
                         </div>
                     </div>
