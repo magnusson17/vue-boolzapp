@@ -97,6 +97,7 @@ var app = new Vue(
             ],
             indexChange: 0,
             myMessage: "",
+            myQuest: ""
         },
         created() {
 

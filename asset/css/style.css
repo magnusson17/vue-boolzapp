@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.overflow_y {
+.overflow_y_auto {
     overflow-y: auto;
 }
 

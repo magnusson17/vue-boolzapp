@@ -48,18 +48,22 @@
                             </div>
                         </div>
 
-                        <!-- 3a sec -->
+                        <!-- 3a sec INPUT E LENTE -->
                         <div class="d-flex align-items-center py-2">
                             <div class="p-2">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                             <div class="w-100">
-                                <input class="w-100" type="text" placeholder="">
+                                <input 
+                                class="w-100" 
+                                type="text" 
+                                placeholder="Cerca"
+                                v-model="myQuest">
                             </div>
                         </div>
 
                         <!-- 4a sec immagini da ciclare -->
-                        <div class="overflow_y prova">
+                        <div class="overflow_y_auto prova">
                             <ul class="p-0" >
                                 <li 
                                 @click="indexChangeFunction(index)"
@@ -72,7 +76,7 @@
                                             class="rounded-circle img_profile me-3">
                                         <div class="d-flex flex-column">
                                             <span class="fw-bold">{{element.name}}</span>
-                                            <span>{{element.messages[0].message}}</span>
+                                            <span>Ultimo messaggio</span>
                                         </div>
                                     </div>
                                     <div class="align-self-baseline">
@@ -84,11 +88,13 @@
                     </div>
 
                     <!-- COLONNA DX -->
+                    <!-- Chat aperta -->
                     <div class="col-8 d-flex flex-column justify-content-between">
                         <div class="d-flex justify-content-between align-items-center p-3">
-                            <div class="d-flex align-items-center">
-                                <img :src=" './asset/img/avatar' + usersChat[0].avatar + '.jpg' " alt="img" class="rounded-circle img_profile me-3">
-                                <span class="fw-bold">{{usersChat[0].name}}</span>
+                            <div 
+                            class="d-flex align-items-center">
+                            <img :src=" './asset/img/avatar' + usersChat[indexChange].avatar + '.jpg' " alt="img" class="rounded-circle img_profile me-3">
+                                <span class="fw-bold">{{usersChat[indexChange].name}}</span>
                             </div>
                             <div>
                                 <i class="fa-solid fa-circle-notch mx-1"></i>
@@ -98,7 +104,7 @@
                         </div>
 
                         <!-- chat -->
-                        <div class="sfondo_chat  p-5 overflow_y prova">
+                        <div class="sfondo_chat h-100 p-5">
                             <ul class="list-group list-group-flash d-flex flex-column">
                                 <li 
                                 v-for="(element, index) in usersChat[indexChange].messages"
