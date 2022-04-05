@@ -49,11 +49,11 @@ p {
     margin-bottom: 0;
 }
 
-.sent {
+.sent_class {
     background-color: green;
 }
 
-.received {
+.received_class {
     background-color: white;
 }
 

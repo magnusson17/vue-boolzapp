@@ -95,11 +95,33 @@ var app = new Vue(
                     ],
                 },
             ],
+            indexChange: 0,
             myMessage: "",
         },
+        created() {
+
+        },
         methods: {
-            sendMyMessage: function() {
-                
+            indexChangeFunction: function(indx) {
+                this.indexChange = indx
+            },
+
+            myMessageFunction: function() {
+                let myMessageNewObj = {
+                    message: this.myMessage,
+                    status: 'sent'
+                };
+                this.usersChat[this.indexChange].messages.push(myMessageNewObj);
+                this.myMessage = "";
+                setTimeout(this.answerMeOkFunction, 1000)
+            },
+
+            answerMeOkFunction: function() {
+                let answerMessageNewObj = {
+                    message: "Okk",
+                    status: "received"
+                }
+                this.usersChat[this.indexChange].messages.push(answerMessageNewObj);
             }
         }
     }

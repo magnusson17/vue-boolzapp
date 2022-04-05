@@ -60,8 +60,13 @@
 
                         <!-- 4a sec immagini da ciclare -->
                         <div class="overflow_y prova">
-                            <ul class="p-0">
-                                <li  v-for="(element) in usersChat" :key="element" class="d-flex align-items-center justify-content-between p-3">
+                            <ul class="p-0" >
+                                <li 
+                                @click="indexChangeFunction(index)"
+                                v-for="(element, index) in usersChat" 
+                                :key="element" 
+                                role="button" 
+                                class="d-flex align-items-center justify-content-between p-3">
                                     <div class="d-flex align-items-center">
                                         <img :src=" './asset/img/avatar' + element.avatar + '.jpg' " alt="img_users"
                                             class="rounded-circle img_profile me-3">
@@ -93,14 +98,18 @@
                         </div>
 
                         <!-- chat -->
-                        <div class="sfondo_chat h-100 p-5">
+                        <div class="sfondo_chat  p-5 overflow_y prova">
                             <ul class="list-group list-group-flash d-flex flex-column">
-                                <li class="list-group-item rounded-3 max_w_100 overflow_h mb-2 sent align-self-end">
-                                    {{myMessage}}
+                                <li 
+                                v-for="(element, index) in usersChat[indexChange].messages"
+                                :key="element"
+                                :class="(element.status == 'sent') ? 'align-self-end sent_class' : 'align-self-start received_class' "
+                                class="list-group-item rounded-3 max_w_100 overflow_h mb-2">
+                                {{element.message}}
                                 </li>
-                                <li class="list-group-item rounded-3 max_w_100 overflow_h mb-2 recived align-self-start">
+                                <!-- <li class="list-group-item rounded-3 max_w_100 overflow_h mb-2">
                                     messaggio2
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
 
@@ -110,10 +119,15 @@
                                 <i class="fa-regular fa-face-smile fs-4 px-2 hover_pointer"></i>
                             </div>
                             <div class="w-100">
-                                <input v-model="myMessage" class="w-100 p-1" type="text" placeholder="Scrivi un messaggio">
+                                <input 
+                                v-model="myMessage" 
+                                class="w-100 p-1" 
+                                type="text" 
+                                placeholder="Scrivi un messaggio"
+                                @keyup.enter="myMessageFunction()">
                             </div>
                             <div class="p-2">
-                                <i class="fa-solid fa-paper-plane fs-4 hover_pointer"></i>
+                                <i class="fa-solid fa-paper-plane fs-4 hover_pointer" @click="myMessageFunction()"></i>
                             </div>
                             <div class="p-2">
                                 <i class="fa-solid fa-microphone fs-4 hover_pointer"></i>
