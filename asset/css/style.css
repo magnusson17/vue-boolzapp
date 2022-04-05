@@ -60,3 +60,10 @@ p {
 .prova {
     height: 300px;
 }
+
+.scroll_menu_class {
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    top: -30px;
+}

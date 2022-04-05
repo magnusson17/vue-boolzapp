@@ -97,7 +97,8 @@ var app = new Vue(
             ],
             indexChange: 0,
             myMessage: "",
-            myQuest: ""
+            myQuest: "",
+            apears: false,
         },
         created() {
 
@@ -133,7 +134,11 @@ var app = new Vue(
                     status: "received"
                 }
                 this.usersChat[this.indexChange].messages.push(answerMessageNewObj);
-            }
+            },
+
+            // scrollMenuApears: function() {
+            //     this.apears = true
+            // }
         }
     }
 );

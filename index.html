@@ -105,18 +105,23 @@
 
                         <!-- CHAT -->
                         <div class="sfondo_chat h-100 p-5">
-                            <ul class="list-group list-group-flash d-flex flex-column">
-                                <li 
-                                v-for="(element, index) in usersChat[indexChange].messages"
-                                :key="element"
+                            <ul 
+                            class="list-group list-group-flash d-flex flex-column" 
+                            v-for="(element, index) in usersChat[indexChange].messages"
+                            :key="element">
+                                <li
                                 :class="(element.status == 'sent') ? 'align-self-end sent_class' : 'align-self-start received_class' "
-                                class="list-group-item rounded-3 max_w_100 overflow_h mb-2">
+                                class="list-group-item rounded-3 max_w_100 overflow_h mb-2"
+                                @click="scrollMenuApears()">
                                 {{element.message}}
-                                <p class="fs_0_7em text-end">{{element.date}}</p>
+                                    <p class="fs_0_7em text-end">{{element.date}}</p>
                                 </li>
-                                <!-- <li class="list-group-item rounded-3 max_w_100 overflow_h mb-2">
-                                    messaggio2
-                                </li> -->
+                                <!-- <div
+                                @click="scrollMenuDelateMessage()"
+                                class="scroll_menu_class rounded-1" 
+                                :class="(element.status == 'sent') ? 'align-self-end' : 'align-self-start' "
+                                :class="(apears == true) ? 'd-block' : 'd-none' "
+                                >Elimina messaggio</div> -->
                             </ul>
                         </div>
 
