@@ -108,7 +108,12 @@ var app = new Vue(
             },
 
             myMessageFunction: function() {
+                let currentDate = dayjs().format('DD/MM/YYYY');
+                let currentHour = dayjs().get('hour');
+                let currentMinute = dayjs().get('minutes');
+
                 let myMessageNewObj = {
+                    date: `${currentDate} ${currentHour}:${currentMinute}`,
                     message: this.myMessage,
                     status: 'sent'
                 };
@@ -118,7 +123,12 @@ var app = new Vue(
             },
 
             answerMeOkFunction: function() {
+                let currentDate = dayjs().format('DD/MM/YYYY');
+                let currentHour = dayjs().get('hour');
+                let currentMinute = dayjs().get('minutes');
+
                 let answerMessageNewObj = {
+                    date: `${currentDate} ${currentHour}:${currentMinute}`,
                     message: "Okk",
                     status: "received"
                 }
