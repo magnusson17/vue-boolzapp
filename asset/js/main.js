@@ -96,9 +96,12 @@ var app = new Vue(
                 },
             ],
             indexChange: 0,
+            messagesIndexChange: 0,
             myMessage: "",
             myQuest: "",
             apears: false,
+            // testo_data: 
+            // trovaLength: messages.lenght
         },
         created() {
 
@@ -146,11 +149,19 @@ var app = new Vue(
                         }
                     }
                 );
-            }
+            },
 
-            // scrollMenuApears: function() {
-            //     this.apears = true
-            // }
+            scrollMenuApears: function() {
+                // this.messagesIndexChange = indx
+                if (this.apears == false) {
+                    this.apears = true
+                } else {
+                    this.apears = false
+                }  
+            },
+
+            // messagesIndexChangeFun: function(indx) {
+            // },
         }
     }
 );

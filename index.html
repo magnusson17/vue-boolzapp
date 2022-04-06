@@ -78,11 +78,11 @@
                                             class="rounded-circle img_profile me-3">
                                         <div class="d-flex flex-column">
                                             <span class="fw-bold">{{element.name}}</span>
-                                            <span>Ultimo messaggio</span>
+                                            <span>{{element.messages[element.messages.length - 1].message}}</span>
                                         </div>
                                     </div>
                                     <div class="align-self-baseline">
-                                        <span class="fs_0_7em">{{element.messages[0].date}}</span>
+                                        <span class="fs_0_7em">{{element.messages[element.messages.length - 1].date}}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -118,13 +118,12 @@
                                 {{element.message}}
                                     <p class="fs_0_7em text-end">{{element.date}}</p>
                                 </li>
-                                <!-- <div
-                                @click="scrollMenuDelateMessage()"
-                                class="scroll_menu_class rounded-1" 
-                                :class="(element.status == 'sent') ? 'align-self-end' : 'align-self-start' "
-                                :class="(apears == true) ? 'd-block' : 'd-none' "
-                                >Elimina messaggio</div> -->
                             </ul>
+                            <div v-if="(apears == true)"
+                            @click="scrollMenuDelateMessage()"
+                            class="scroll_menu_class rounded-1" 
+                            
+                            >Elimina messaggio</div>
                         </div>
 
                         <!-- sotto chat -->
