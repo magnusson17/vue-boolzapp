@@ -160,8 +160,9 @@ var app = new Vue(
                 }  
             },
 
-            // messagesIndexChangeFun: function(indx) {
-            // },
+            delateMessage: function(indx) {
+
+            },
         }
     }
 );
