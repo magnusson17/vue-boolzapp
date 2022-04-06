@@ -58,16 +58,18 @@
                                 class="w-100" 
                                 type="text" 
                                 placeholder="Cerca"
-                                v-model="myQuest">
+                                v-model="myQuest"
+                                @keyup="researchFunction()">
                             </div>
                         </div>
 
                         <!-- 4a sec immagini da ciclare -->
                         <div class="overflow_y_auto prova">
                             <ul class="p-0" >
-                                <li 
-                                @click="indexChangeFunction(index)"
+                                <li
                                 v-for="(element, index) in usersChat" 
+                                :class="(element.visible == true) ? 'd-block' : 'd-none' "
+                                @click="indexChangeFunction(index)"
                                 :key="element" 
                                 role="button" 
                                 class="d-flex align-items-center justify-content-between p-3">

@@ -136,6 +136,18 @@ var app = new Vue(
                 this.usersChat[this.indexChange].messages.push(answerMessageNewObj);
             },
 
+            researchFunction: function() {
+                this.usersChat.forEach(
+                    (element, index) => {
+                        if (element.name.toLowerCase().includes(this.myQuest) == true) {
+                            element.visible = true;
+                        } else {
+                            element.visible = false;
+                        }
+                    }
+                );
+            }
+
             // scrollMenuApears: function() {
             //     this.apears = true
             // }
