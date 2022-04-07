@@ -121,9 +121,11 @@ var app = new Vue(
                     message: this.myMessage,
                     status: 'sent'
                 };
-                this.usersChat[this.indexChange].messages.push(myMessageNewObj);
-                this.myMessage = "";
-                setTimeout(this.answerMeOkFunction, 1000)
+                if (this.myMessage != "") {
+                    this.usersChat[this.indexChange].messages.push(myMessageNewObj);
+                    this.myMessage = "";
+                    setTimeout(this.answerMeOkFunction, 1000)
+                }
             },
 
             answerMeOkFunction: function() {
