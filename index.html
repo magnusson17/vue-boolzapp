@@ -114,16 +114,20 @@
                                 <li
                                 :class="(element.status == 'sent') ? 'align-self-end sent_class' : 'align-self-start received_class' "
                                 class="list-group-item rounded-3 max_w_100 overflow_h mb-2"
-                                @click="scrollMenuApears()">
-                                {{element.message}}
+                                @click="scrollMenuApears(index)">
+                                    {{element.message}}
                                     <p class="fs_0_7em text-end">{{element.date}}</p>
                                 </li>
+
+                                <div
+                                v-if="(element.apears == true)"
+                                @click="delateMessage(index)"
+                                class="scroll_menu_class rounded-1" 
+                                :class="(element.status == 'sent') ? 'align-self-end sent_class' : 'align-self-start received_class' "
+                                >Elimina messaggio
+                                <!-- !!! PERCHE NON POSSO METTERE PIU V-BIND:CLASS??? !!! -->
+                                </div>
                             </ul>
-                            <div v-if="(apears == true)"
-                            @click="delateMessage()"
-                            class="scroll_menu_class rounded-1" 
-                            
-                            >Elimina messaggio</div>
                         </div>
 
                         <!-- sotto chat -->
