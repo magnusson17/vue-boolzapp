@@ -20,19 +20,16 @@ var app = new Vue(
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent',
-                            apears: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di stendere i panni',
                             status: 'sent',
-                            apears: false
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received',
-                            apears: false
                         }
                     ],
                 },
@@ -45,19 +42,16 @@ var app = new Vue(
                             date: '20/03/2020 16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent',
-                            apears: false
                         },
                         {
                             date: '20/03/2020 16:30:55',
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received',
-                            apears: false
                         },
                         {
                             date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent',
-                            apears: false
                         }
                     ],
                 },
@@ -70,19 +64,16 @@ var app = new Vue(
                             date: '28/03/2020 10:10:40',
                             message: 'La Marianna va in campagna',
                             status: 'received',
-                            apears: false
                         },
                         {
                             date: '28/03/2020 10:20:10',
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent',
-                            apears: false
                         },
                         {
                             date: '28/03/2020 16:15:22',
                             message: 'Ah scusa!',
                             status: 'received',
-                            apears: false
                         }
                     ],
                 },
@@ -95,13 +86,11 @@ var app = new Vue(
                             date: '10/01/2020 15:30:55',
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent',
-                            apears: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received',
-                            apears: false
                         }
                     ],
                 },
@@ -110,17 +99,19 @@ var app = new Vue(
             messagesIndexChange: 0,
             myMessage: "",
             myQuest: "",
-            // show: false,
-            // bindTheIndex: 0,
+            
+            show: false,
+            bindTheIndex: 0,
             // newObjApears: {
             //     indexServer: 0,
             //     apears: false
             // },
-            // apears: false,
         },
+
         created() {
-            // this.usersChat[this.indexChange].messages[ind].apears;
+            
         },
+
         methods: {
             indexChangeFunction: function(indx) {
                 this.indexChange = indx
@@ -167,34 +158,46 @@ var app = new Vue(
                     }
                 );
             },
+            
+            // this.usersChat[this.indexChange].messages
 
             scrollMenuApears: function(ind) {
-                // this.usersChat[this.indexChange].messages[ind].apears == false
-                // this.usersChat[this.indexChange].messages[ind].newObjApears.apears == false
-                // this.usersChat[this.indexChange].messages[ind].newObjApears.apears = true;     
-                // this.usersChat[this.indexChange].messages[ind].apears = false;
-                // console.log(this.usersChat[this.indexChange].messages[ind]);
-
-                // !!! COME FACCIO A "PUSHARE" IN OGNI OBJ "apears"? senza dover "barare" e andrlo a inserire fisicamente in ogni obj? !!!
-                if (this.usersChat[this.indexChange].messages[ind].status == "sent") {
-                    if (this.usersChat[this.indexChange].messages[ind].apears == false) {
-                        this.usersChat[this.indexChange].messages[ind].apears = true
-                        console.log(this.usersChat[this.indexChange].messages[ind]);
-                    } else {
-                        this.usersChat[this.indexChange].messages[ind].apears = false;
-                        console.log();
-                    }  
-                }
+                this.bindTheIndex = [ind];
+                console.log(this.bindTheIndex);
+                if (this.show == false) {
+                    this.show = true;
+                } else {
+                    this.show = false;
+                }  
+                
             },
 
             delateMessage: function(ind) {
-                this.usersChat[this.indexChange].messages[ind].message = "messaggio eliminato"
+                this.usersChat[this.indexChange].messages.splice(ind, 1);
+                this.show = false;
+                this.bindTheIndex = 0;
+
+                // this.usersChat[this.indexChange].messages[ind].message = "messaggio eliminato"
                 // ora pero voglio dare una class al div contenente questa function che gli dica: "diventa d-none"
                 // e vorrei dare una class al div che contiene "messaggio eliminato" che dica: "diventa stile italic"
             },
         }
     }
 );
+
+/* - ciao Davide, funziona tutto, tranne l'eliminazione del ultimo messaggio restante, a quanto pare non è dovuto ad una condizione che gli ho dato io bensì ad un errore che non capisco.
+
+'si perchè richiede che ci sia almeno un messaggio da stampare
+
+la richiesta è al contrario, ovvero elimina i messaggi a meno che non ce ne sia soltanto 1
+Nuovo
+
+se ce n'è solo 1 non eliminarlo, così non va in errore 
+
+va cambiata un po la logica generale, perchè al momento si richiede che ci sia almeno un messaggio, perchè molte funzionalità attingono alla data dell'ultimo messaggio inviato ecc..
+
+andrebbe gestita ovunque l'eccezione che non siano presenti messaggi'
+*/
 
 
 

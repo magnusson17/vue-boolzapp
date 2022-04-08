@@ -120,12 +120,11 @@
                                 </li>
 
                                 <div
-                                v-if="(element.apears == true)"
+                                v-if="(show == true && bindTheIndex == index)"
                                 @click="delateMessage(index)"
                                 class="scroll_menu_class rounded-1" 
                                 :class="(element.status == 'sent') ? 'align-self-end sent_class' : 'align-self-start received_class' "
                                 >Elimina messaggio
-                                <!-- !!! PERCHE NON POSSO METTERE PIU V-BIND:CLASS??? !!! -->
                                 </div>
                             </ul>
                         </div>
