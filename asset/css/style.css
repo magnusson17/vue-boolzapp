@@ -37,7 +37,7 @@
 }
 
 .sfondo_chat {
-    background-color: gray;
+    background-image: url('../img/mine.jpg');
 }
 
 .img_profile {
@@ -58,7 +58,7 @@ p {
 }
 
 .prova {
-    height: 300px;
+    height: 600px;
 }
 
 .scroll_menu_class {

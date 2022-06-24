@@ -94,12 +94,92 @@ var app = new Vue(
                         }
                     ],
                 },
+                {
+                    name: 'Alessandro L.',
+                    avatar: '_5',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ricordati di chiamare la nonna',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Va bene, stasera la sento',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    name: 'Claudia',
+                    avatar: '_6',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao Claudia, hai novità?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Non ancora',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'Nessuna nuova, buona nuova',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Federico',
+                    avatar: '_7',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    name: 'Davide',
+                    avatar: '_8',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'OK!!',
+                            status: 'received'
+                        }
+                    ],
+                }
+
             ],
+            
             indexChange: 0,
             messagesIndexChange: 0,
             myMessage: "",
             myQuest: "",
-            
+
             show: false,
             bindTheIndex: 0,
             // newObjApears: {
@@ -109,15 +189,15 @@ var app = new Vue(
         },
 
         created() {
-            
+
         },
 
         methods: {
-            indexChangeFunction: function(indx) {
+            indexChangeFunction: function (indx) {
                 this.indexChange = indx
             },
 
-            myMessageFunction: function() {
+            myMessageFunction: function () {
                 let currentDate = dayjs().format('DD/MM/YYYY');
                 let currentHour = dayjs().get('hour');
                 let currentMinute = dayjs().get('minutes');
@@ -134,7 +214,7 @@ var app = new Vue(
                 }
             },
 
-            answerMeOkFunction: function() {
+            answerMeOkFunction: function () {
                 let currentDate = dayjs().format('DD/MM/YYYY');
                 let currentHour = dayjs().get('hour');
                 let currentMinute = dayjs().get('minutes');
@@ -147,7 +227,7 @@ var app = new Vue(
                 this.usersChat[this.indexChange].messages.push(answerMessageNewObj);
             },
 
-            researchFunction: function() {
+            researchFunction: function () {
                 this.usersChat.forEach(
                     (element, index) => {
                         if (element.name.toLowerCase().includes(this.myQuest) == true) {
@@ -158,21 +238,21 @@ var app = new Vue(
                     }
                 );
             },
-            
+
             // this.usersChat[this.indexChange].messages
 
-            scrollMenuApears: function(ind) {
+            scrollMenuApears: function (ind) {
                 this.bindTheIndex = [ind];
                 console.log(this.bindTheIndex);
                 if (this.show == false) {
                     this.show = true;
                 } else {
                     this.show = false;
-                }  
-                
+                }
+
             },
 
-            delateMessage: function(ind) {
+            delateMessage: function (ind) {
                 this.usersChat[this.indexChange].messages.splice(ind, 1);
                 this.show = false;
                 this.bindTheIndex = 0;
